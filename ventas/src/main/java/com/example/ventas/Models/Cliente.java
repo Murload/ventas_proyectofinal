@@ -23,7 +23,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idCliente;
+    private Long idCliente;
     @Column
     private String nombre;
     @OneToMany

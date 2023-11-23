@@ -54,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\" : \"Alejandro\",\r\n    \"direccion\" :\"Centro\",\r\n    \"telefono\" : 3000000\r\n}\r\n",
+							"raw": "{\r\n    \"nombre\" : \"Alejandro\",\r\n    \"direccion\" :\"7 de agosto\",\r\n    \"telefono\" : 3000000\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,7 +81,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\" : \"Alva\",\r\n    \"direccion\" :\"Norte\",\r\n    \"telefono\" : 3211111\r\n}",
+							"raw": "{\r\n    \"nombre\" : \"Yesika\",\r\n    \"direccion\" :\"Norte\",\r\n    \"telefono\" : 3211111\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -89,14 +89,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8090/cliente/4",
+							"raw": "localhost:8090/cliente/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8090",
 							"path": [
 								"cliente",
-								"4"
+								"2"
 							]
 						}
 					},
@@ -159,13 +159,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8090/producto",
+							"raw": "localhost:8090/producto/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8090",
 							"path": [
-								"producto"
+								"producto",
+								"2"
 							]
 						}
 					},
@@ -178,7 +179,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \"nombre\": \"Acetaminofen\",\r\n    \"cantidad\": 1, \r\n    \"categoria\" : \"Lego\",\r\n    \"precio\" : 10000,\r\n    \"imagen\" : \"/hola\"\r\n\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n    \"nombre\": \"Perras\",\r\n    \"cantidad\": 1, \r\n    \"categoria\" : \"Chapinero\",\r\n    \"precio\" : 100000,\r\n    \"imagen\" : \"/hola1\"\r\n\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -213,14 +214,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8090/producto/1",
+							"raw": "localhost:8090/producto/102",
 							"host": [
 								"localhost"
 							],
 							"port": "8090",
 							"path": [
 								"producto",
-								"1"
+								"102"
 							]
 						}
 					},
@@ -381,7 +382,34 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n    \r\n   {\r\n        \"producto\": { \r\n            \"idProducto\" : 1\r\n        }\r\n        ,\r\n        \"cliente\": { \r\n            \"idCliente\" : 1\r\n        },\r\n        \"cantidad\": 10,\r\n        \"total\": 50000.0,\r\n        \"fechaVenta\": null\r\n    }\r\n\r\n\r\n",
+							"raw": "\r\n    \r\n   {\r\n        \"producto\": { \r\n            \"idProducto\" : 2\r\n        }\r\n        ,\r\n        \"cliente\": { \r\n            \"idCliente\" : 1\r\n        },\r\n        \"cantidad\": 5,\r\n        \"fechaVenta\": null\r\n    }\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/venta",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"venta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearVentas Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"producto\": { \r\n            \"idProducto\" : 102\r\n        }\r\n        ,\r\n        \"cliente\": { \r\n            \"idCliente\" : 52\r\n        },\r\n        \"cantidad\": 1,\r\n        \"fechaVenta\": null\r\n    }\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"

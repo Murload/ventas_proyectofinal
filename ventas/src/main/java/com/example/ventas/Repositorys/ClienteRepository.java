@@ -8,6 +8,6 @@ import com.example.ventas.Models.Cliente;
 
 
 @Repository
-public interface ClienteRepository extends CrudRepository<Cliente, Integer>{
+public interface ClienteRepository extends CrudRepository<Cliente, Long>{
     
 }

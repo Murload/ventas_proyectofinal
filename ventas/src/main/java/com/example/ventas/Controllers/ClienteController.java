@@ -33,7 +33,7 @@ public class ClienteController {
     }
 
     @GetMapping("/cliente/{id}")
-    public ResponseEntity<Cliente> findClienteById(@PathVariable("id") int id){
+    public ResponseEntity<Cliente> findClienteById(@PathVariable("id") Long id){
         Optional<Cliente> cliente = clienteRepository.findById(id);
 
         if (cliente.isPresent()) {
@@ -52,7 +52,7 @@ public class ClienteController {
     }
 
     @PutMapping("/cliente/{id}")
-    public ResponseEntity<Cliente> putCliente(@PathVariable("id") int id, @RequestBody Cliente cliente){
+    public ResponseEntity<Cliente> putCliente(@PathVariable("id") Long id, @RequestBody Cliente cliente){
         Optional<Cliente> clienteA = clienteRepository.findById(id);
 
         if(clienteA.isPresent()){
@@ -69,7 +69,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/cliente/{id}")
-    public ResponseEntity<HttpStatus> deleteCliente(@PathVariable("id") int id){
+    public ResponseEntity<HttpStatus> deleteCliente(@PathVariable("id") Long id){
         Optional<Cliente> cliente = clienteRepository.findById(id);
 
         if(cliente.isPresent()){
