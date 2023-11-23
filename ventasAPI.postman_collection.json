@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "75c17fb3-2c8d-4e5b-b032-743dec5a78a2",
+		"name": "ventasAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19335402",
+		"_collection_link": "https://planetary-meteor-698051.postman.co/workspace/Programaci%C3%B3n-~d0a33459-c21f-4cac-a962-9a480e65ee08/collection/19335402-75c17fb3-2c8d-4e5b-b032-743dec5a78a2?action=share&source=collection_link&creator=19335402"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "ObtenerClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerClienteId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cliente/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cliente",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Alejandro\",\r\n    \"direccion\" :\"Centro\",\r\n    \"telefono\" : 3000000\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Alva\",\r\n    \"direccion\" :\"Norte\",\r\n    \"telefono\" : 3211111\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cliente/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cliente",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutCliente Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cliente/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cliente",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "ObtenerProductos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/producto",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerProductos Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/producto",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearProducto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"nombre\": \"Acetaminofen\",\r\n    \"cantidad\": 1, \r\n    \"categoria\" : \"Lego\",\r\n    \"precio\" : 10000,\r\n    \"imagen\" : \"/hola\"\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/producto",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearProducto Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n     \"nombre\": \"Clonazepam\",\r\n    \"cantidad\": 12, \r\n    \"categoria\" : \"Farmacos\",\r\n    \"precio\" : 10000,\r\n    \"imagen\" : \"/hola\"\r\n\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/producto/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"producto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearProducto Copy 2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n     \"nombre\": \"Clonazepam\",\r\n    \"cantidad\": 12, \r\n    \"categoria\" : \"Farmacos\",\r\n    \"precio\" : 10000,\r\n    \"imagen\" : \"/hola\"\r\n\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/producto/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"producto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empleados",
+			"item": [
+				{
+					"name": "ObtenerEmpleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/empleado/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"empleado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerEmpleadosID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/empleado/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"empleado",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Empleados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"prueba\",\r\n    \"apellido\": \"prueba\",\r\n    \"cargo\": \"admin\",\r\n    \"contrasena\": \"leo\",\r\n    \"telefono\": \"321231\",\r\n    \"activo\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/empleado",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Empleados Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"prueba\",\r\n    \"apellido\": \"prueba\",\r\n    \"cargo\": \"admin\",\r\n    \"contrasena\": \"leo\",\r\n    \"telefono\": \"321231\",\r\n    \"activo\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/empleado",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ventas",
+			"item": [
+				{
+					"name": "ObtenerVentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/ventas",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"ventas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearVentas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    \r\n   {\r\n        \"producto\": { \r\n            \"idProducto\" : 1\r\n        }\r\n        ,\r\n        \"cliente\": { \r\n            \"idCliente\" : 1\r\n        },\r\n        \"cantidad\": 10,\r\n        \"total\": 50000.0,\r\n        \"fechaVenta\": null\r\n    }\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/venta",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"venta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearVentas Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/venta/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"venta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
