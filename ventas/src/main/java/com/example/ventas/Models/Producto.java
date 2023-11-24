@@ -34,6 +34,6 @@ public class Producto {
     private int cantidad;
     @Column
     private String categoria;
-    @Column
-    private String imagen;   
+    // @Column
+    // private String imagen;   
 }

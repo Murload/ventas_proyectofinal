@@ -54,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\" : \"Alejandro\",\r\n    \"direccion\" :\"7 de agosto\",\r\n    \"telefono\" : 3000000\r\n}\r\n",
+							"raw": "{\r\n    \"nombre\" : \"Leonardo Murcia\",\r\n    \"direccion\" :\"Carrera 78c # 1-2\",\r\n    \"telefono\" : 3016416519\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,7 +81,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\" : \"Yesika\",\r\n    \"direccion\" :\"Norte\",\r\n    \"telefono\" : 3211111\r\n}",
+							"raw": "{\r\n    \"nombre\" : \"Alexandra Rivera\",\r\n    \"direccion\" :\"Carrera 27 # 20\",\r\n    \"telefono\" : 3218532491\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -89,14 +89,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8090/cliente/2",
+							"raw": "localhost:8090/cliente/1",
 							"host": [
 								"localhost"
 							],
 							"port": "8090",
 							"path": [
 								"cliente",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -179,7 +179,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \"nombre\": \"Perras\",\r\n    \"cantidad\": 1, \r\n    \"categoria\" : \"Chapinero\",\r\n    \"precio\" : 100000,\r\n    \"imagen\" : \"/hola1\"\r\n\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n    \"nombre\": \"Ibuprofeno\",\r\n    \"cantidad\": 6, \r\n    \"categoria\" : \"Medicamentos\",\r\n    \"precio\" : 800,\r\n    \"imagen\" : \"/hola1\"\r\n\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -376,40 +376,13 @@
 					"response": []
 				},
 				{
-					"name": "CrearVentas",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n    \r\n   {\r\n        \"producto\": { \r\n            \"idProducto\" : 2\r\n        }\r\n        ,\r\n        \"cliente\": { \r\n            \"idCliente\" : 1\r\n        },\r\n        \"cantidad\": 5,\r\n        \"fechaVenta\": null\r\n    }\r\n\r\n\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8090/venta",
-							"host": [
-								"localhost"
-							],
-							"port": "8090",
-							"path": [
-								"venta"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "CrearVentas Copy",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "   {\r\n        \"producto\": { \r\n            \"idProducto\" : 102\r\n        }\r\n        ,\r\n        \"cliente\": { \r\n            \"idCliente\" : 52\r\n        },\r\n        \"cantidad\": 1,\r\n        \"fechaVenta\": null\r\n    }\r\n\r\n\r\n",
+							"raw": "   {\r\n        \"producto\": { \r\n            \"idProducto\" : 1\r\n        }\r\n        ,\r\n        \"cliente\": { \r\n            \"idCliente\" : 1\r\n        },\r\n        \"cantidad\": 3\r\n        \r\n    }\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"

@@ -31,7 +31,7 @@ public class Cliente {
     @Column
     private String direccion;
     @Column
-    private int telefono;
+    private Long telefono;
 
 
     

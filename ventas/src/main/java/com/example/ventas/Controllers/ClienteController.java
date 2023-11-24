@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ public class ClienteController {
     @Autowired 
     private ClienteRepository clienteRepository;
 
+    @CrossOrigin
     @GetMapping("/cliente")
     public ResponseEntity<List<Cliente>> findAllClientes(){
         List<Cliente> clientes = new ArrayList<Cliente>();
@@ -32,6 +34,7 @@ public class ClienteController {
         return new ResponseEntity<>(clientes, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping("/cliente/{id}")
     public ResponseEntity<Cliente> findClienteById(@PathVariable("id") Long id){
         Optional<Cliente> cliente = clienteRepository.findById(id);
@@ -43,14 +46,14 @@ public class ClienteController {
 		}
         
     }
-
+    @CrossOrigin
     @PostMapping("/cliente")
     public ResponseEntity<Cliente> postCliente(@RequestBody Cliente cliente){
         Cliente cliente2 = clienteRepository.save(cliente);
 
         return new ResponseEntity<>(cliente2, HttpStatus.OK);
     }
-
+    @CrossOrigin
     @PutMapping("/cliente/{id}")
     public ResponseEntity<Cliente> putCliente(@PathVariable("id") Long id, @RequestBody Cliente cliente){
         Optional<Cliente> clienteA = clienteRepository.findById(id);
@@ -67,7 +70,7 @@ public class ClienteController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
+    @CrossOrigin
     @DeleteMapping("/cliente/{id}")
     public ResponseEntity<HttpStatus> deleteCliente(@PathVariable("id") Long id){
         Optional<Cliente> cliente = clienteRepository.findById(id);

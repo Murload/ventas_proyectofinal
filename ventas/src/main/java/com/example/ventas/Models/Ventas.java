@@ -14,9 +14,9 @@ import jakarta.persistence.ManyToOne;
 //import jakarta.persistence.OneToOne;
 //import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import java.util.Date;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+// import java.util.Date;
+// import jakarta.persistence.Temporal;
+// import jakarta.persistence.TemporalType;
 // import lombok.Data;
 
 @Entity
@@ -41,8 +41,8 @@ public class Ventas {
     @Column
     private double total; 
 
-        @Temporal(TemporalType.TIMESTAMP)
-        private Date fechaVenta;
+      
+        private String fechaVenta;
 
 
         public Long getIdVenta() {
@@ -85,15 +85,15 @@ public class Ventas {
             this.total = total;
         }
 
-        public Date getFechaVenta() {
+        public String getFechaVenta() {
             return fechaVenta;
         }
 
-        public void setFechaVenta(Date fechaVenta) {
+        public void setFechaVenta(String fechaVenta) {
             this.fechaVenta = fechaVenta;
         }
 
-        public Ventas(Long idVenta, Producto producto, Cliente cliente, int cantidad, double total, Date fechaVenta) {
+        public Ventas(Long idVenta, Producto producto, Cliente cliente, int cantidad, double total, String fechaVenta) {
             this.idVenta = idVenta;
             this.producto = producto;
             this.cliente = cliente;

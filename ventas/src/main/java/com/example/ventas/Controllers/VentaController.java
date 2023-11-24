@@ -9,21 +9,25 @@ import com.example.ventas.Models.Producto;
 // import com.example.ventas.Models.Producto;
 // import com.example.ventas.Models.Producto;
 import com.example.ventas.Models.Ventas;
-import com.example.ventas.Controllers.ProductController;
+// import com.example.ventas.Controllers.ProductController;
 import com.example.ventas.Repositorys.VentasRepository;
 import com.example.ventas.Repositorys.ClienteRepository;
 import com.example.ventas.Repositorys.ProductoRepository;
-import ch.qos.logback.core.model.Model;
+// import ch.qos.logback.core.model.Model;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.auditing.CurrentDateTimeProvider;
 // import org.springframework.boot.autoconfigure.integration.IntegrationProperties.RSocket.Client;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,6 +47,7 @@ public class VentaController {
     @Autowired
     private ProductoRepository productoRepository;
 
+    @CrossOrigin
     @GetMapping("/ventas")
     public ResponseEntity<List<Ventas>> findAllVentas() {
         List<Ventas> ventas = new ArrayList<Ventas>();
@@ -56,13 +61,20 @@ public class VentaController {
     //     String mensaje = "La venta con el ID " + ven.getIdVenta() + " fue creado con éxito!";
     //     return new ResponseEntity<>(mensaje, HttpStatus.CREATED);
     // }
-
+    @CrossOrigin
     @PostMapping("/venta")
     public ResponseEntity<String> postVentass(@RequestBody Ventas venta) {
        Producto vpro = venta.getProducto();
        Cliente cli = venta.getCliente();
         // Long idProducto = pro.getIdProducto();
         // Long idCliente = cli.getIdCliente();
+        Date fecha = new Date();
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy " + " HH:mm:ss");
+
+        // Formatear la fecha
+        String fechaFormateada = sdf.format(fecha);
+
         Optional<Cliente> cliente = clienteRepository.findById(cli.getIdCliente());
         Optional<Producto> producto = productoRepository.findById(vpro.getIdProducto());
 
@@ -75,6 +87,7 @@ public class VentaController {
                 productos.setCantidad(productos.getCantidad() - venta.getCantidad());
                 Producto prod = productoRepository.save(productos);
                 venta.setTotal(productos.getPrecio() * venta.getCantidad());
+                venta.setFechaVenta(fechaFormateada);
                 Ventas ven = ventarepository.save(venta);
                 
                 return new ResponseEntity<>("El producto y la venta se actualizaron correctamente", HttpStatus.OK);
@@ -90,6 +103,7 @@ public class VentaController {
         }         
     }
 
+    @CrossOrigin
     @DeleteMapping("/venta/{id}")
     public ResponseEntity<String> deleteVentas(@PathVariable("id") Long id) {
         Optional<Ventas> ven = ventarepository.findById(id);

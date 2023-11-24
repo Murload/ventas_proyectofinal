@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 //import org.springframework.http.HttpStatusCode;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,13 +27,14 @@ public class ProductController {
     @Autowired
     private ProductoRepository productoRepository;
 
+    @CrossOrigin
     @GetMapping("/producto")
     public ResponseEntity<List<Producto>> findAllProductos() {
         List<Producto> productos = new ArrayList<Producto>();
         productoRepository.findAll().forEach(productos::add);
         return new ResponseEntity<>(productos, HttpStatus.OK);
     }
-
+    @CrossOrigin
     @GetMapping("/producto/{id}")
     @ResponseBody
     public ResponseEntity<Producto> findProductById(@PathVariable("id") Long id) {
@@ -44,14 +46,14 @@ public class ProductController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-        
+    @CrossOrigin    
     @PostMapping("/producto")
     public ResponseEntity<String> postProducto(@RequestBody Producto producto) {
         Producto pro = productoRepository.save(producto);
         String mensaje = "¡El producto con el ID " + pro.getIdProducto() + " fue creado con éxito!";
         return new ResponseEntity<>(mensaje, HttpStatus.CREATED);
     }
-
+    @CrossOrigin
     @PutMapping("/producto/{id}")
     public ResponseEntity<Producto> UpdateProduct(@PathVariable("id") Long id, @RequestBody Producto producto) {
         Optional<Producto> proAnt = productoRepository.findById(id);
@@ -62,7 +64,7 @@ public class ProductController {
             productoAnt.setCantidad(producto.getCantidad());
             productoAnt.setPrecio(producto.getPrecio());
             productoAnt.setCategoria(producto.getCategoria());
-            productoAnt.setImagen(producto.getImagen());
+            // productoAnt.setImagen(producto.getImagen());
 
             return new ResponseEntity<Producto>(productoRepository.save(productoAnt), HttpStatus.OK);
         } else {
@@ -84,6 +86,7 @@ public class ProductController {
         }
     }
 */
+    @CrossOrigin
     @DeleteMapping("/producto/{id}")
     public ResponseEntity<String> deleteProduct(@PathVariable("id") Long id){
         Optional<Producto> pro = productoRepository.findById(id);
@@ -91,7 +94,7 @@ public class ProductController {
 
         if (pro.isPresent()) {
             productoRepository.deleteById(id);
-            String mensaje = "¡El producto con el w" + prod.getIdProducto() +"fue eliminado con éxito!";
+            String mensaje = "¡El producto con el" + prod.getIdProducto() +"fue eliminado con éxito!";
             return new ResponseEntity<>(mensaje,HttpStatus.NO_CONTENT);
             
         } else {
